@@ -1,0 +1,21 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Deploy Ghost Theme
+        uses: TryGhost/action-deploy-theme@v1.2.1
+        with:
+          # Ghost Admin API Url
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          # Ghost Admin API Key
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          theme-name: "htdahms-undefined-theme"
+          # Files or folders to exclude (space-separated list)
+          # exclude: # optional
