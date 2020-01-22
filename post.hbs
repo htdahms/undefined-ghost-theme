@@ -4,21 +4,21 @@
 
 <main class="container content" id="content">
 
-  <article class="post {{post_class}}">
+  <article class="post post-full-content {{post_class}}">
 
     {{#post}}
 
-      <header class="post__header">
-        <h1 class="post__title">{{title}}</h1>
+      <header class="post-full-header">
+        <h1 class="post-full-title">{{title}}</h1>
 
-        <div class="post__meta">
+        <div class="post-full-meta">
           Posted by {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}} on
-          <time class="post__date" datetime="{{date format='YYYY-MM-DD'}}">
+          <time class="post-full-meta-date" datetime="{{date format='YYYY-MM-DD'}}">
             {{date format="MMMM Do, YYYY"}}.
           </time>
 
           {{#if tags}}
-            <span class="post__tags">
+            <span class="post-full-tags">
               {{tags prefix="Tagged "}}
             </span>
           {{/if}}
@@ -45,13 +45,11 @@
 
       </section>
 
-      <hr>
-
       <footer class="post__footer">
 
       {{> subscribe-widget}}
 
-      {{> author-info}}
+      {{!-- {{> author-info}} --}}
 
       </footer>
 
